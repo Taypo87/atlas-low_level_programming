@@ -1,0 +1,1 @@
+This directory contains the advanced search algrithms for Atlas School
