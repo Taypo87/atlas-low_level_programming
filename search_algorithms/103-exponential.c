@@ -8,7 +8,7 @@ static int binary_search(int array[], int left, int right, int target)
 	{
         m = (left + (right - left) / 2);
 		printf("Searching in array: %d", array[i++]);
-		while (i <= right && i < upper_limit)
+		while (i <= right)
 		{
 			printf(", %d", array[i++]);
 		}
