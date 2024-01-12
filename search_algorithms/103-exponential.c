@@ -4,17 +4,15 @@ static int binary_search(int array[], int left, int right, int target)
 {
 	int i = left, m, upper_limit = right;
 
-	while (left <= right && i < upper_limit)
+	while (left <= right)
 	{
         m = left + (right - left) / 2;
 		printf("Searching in array: %d", array[i++]);
 		while (i <= right && i < upper_limit)
 		{
-			printf(", %d", array[i]);
-			++i;
+			printf(", %d", array[i++]);
 		}
 		printf("\n");
-		
         if (array[m] == target)
 		{
 			return (m);
