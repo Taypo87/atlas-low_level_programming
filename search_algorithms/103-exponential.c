@@ -42,6 +42,6 @@ int exponential_search(int *array, size_t size, int value)
 	if (bound > (int)size - 1)
 		bound = (int)size - 1;
 	printf("Value found between indexes [%d] and [%d]\n",
-		 rebound, (bound < (int)size ? bound : (int)size - 1));
+		rebound, bound);
 	return (binary_search(array, rebound, bound, value));
 }
