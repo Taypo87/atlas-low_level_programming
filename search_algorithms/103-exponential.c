@@ -25,6 +25,8 @@ static int binary_search(int array[], int left, int right, int target)
             right = m - 1;
 		i = left - 1;
     }
+	if (array[left] == target)
+		return (left);
     return (-1);
 }
 
