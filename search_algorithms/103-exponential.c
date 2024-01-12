@@ -1,31 +1,47 @@
 #include "search_algos.h"
 
-static int binary_search(int arr[], int left, int right, int target)
+static int binary_search(int array[], int left, int right, int target)
 {
-	while (left <= right)
+	int i = left, m, upper_limit = right;
+
+	while (left <= right && i < upper_limit)
 	{
-        int m = left + (right - left) / 2;
-        if (arr[m] == target)
-            return (m);
- 
-        if (arr[m] < target)
+        m = left + (right - left) / 2;
+		printf("Searching in array: %d", array[i++]);
+		while (i <= right && i < upper_limit)
+		{
+			printf(", %d", array[i]);
+			++i;
+		}
+		printf("\n");
+		
+        if (array[m] == target)
+		{
+			return (m);
+		}
+        if (array[m] < target)
             left = m + 1;
         else
             right = m - 1;
+		i = left - 1;
     }
     return (-1);
 }
 
 int exponential_search(int *array, size_t size, int value)
 {
-	int bound = 1;
+	int bound = 1, rebound = 0;
 
 	if (!size)
 		return (-1);
 	
 	while (bound < (int)size && array[bound] < value)
 	{
+		printf("Value checked array[%d] = [%d]\n", bound, array[bound]);
+		rebound = bound;
 		bound *= 2;
 	}
-	return (binary_search(array, bound/2, (((bound + 1) < (int)size) ? (bound + 1) : (int)size), value));
+	printf("Value found between indexes [%d] and [%d]\n", rebound, (bound < (int)size ? bound : (int)size - 1));
+	binary_search(array, rebound,
+		 (((bound) < (int)size) ? (bound) : (int)size), value);
 }
