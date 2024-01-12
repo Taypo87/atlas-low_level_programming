@@ -19,7 +19,7 @@ static int binary_search(int array[], int left, int right, int target)
             left = m + 1;
         else
             right = m - 1;
-		i = left - 1;
+		i = left;
     }
 	if (array[left] == target)
 		return (left);
