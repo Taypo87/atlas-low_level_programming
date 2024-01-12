@@ -2,11 +2,12 @@
 
 static int binary_search(int array[], int left, int right, int target)
 {
-	int i = left, m;
+	int i = 0, m;
 
 	while (left <= right)
 	{
         m = (left + (right - left) / 2);
+		i = left;
 		printf("Searching in array: %d", array[i++]);
 		while (i <= right)
 		{
@@ -19,10 +20,7 @@ static int binary_search(int array[], int left, int right, int target)
             left = m + 1;
         else
             right = m - 1;
-		i = left;
     }
-	if (array[left] == target)
-		return (left);
     return (-1);
 }
 
