@@ -2,7 +2,7 @@
 
 static int binary_search(int array[], int left, int right, int target)
 {
-	int i = left, m, upper_limit = right;
+	int i = left, m;
 
 	while (left <= right)
 	{
